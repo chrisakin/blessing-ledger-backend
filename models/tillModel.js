@@ -9,10 +9,15 @@ const Schema = mongoose.Schema;                // Assigning mongoose schema to v
 const TillSchema = new Schema({
   amount : {
     type: Number,
-    createdAt: Date,
+
     required: true
   },
   
+  totale : {
+    type: Number,
+   
+    required: true
+  },
   createdOn: {
     type: Date,
     default: Date.now

@@ -8,6 +8,7 @@ const Stanbic = require('../models/stanbicModel')
 router.post("/till", (req, res, next) => {
   let till  = new Till();
   till.amount = req.body.amount;
+  till.totale = req.body.totale
   till.save();
   res.json({
     success: true,
