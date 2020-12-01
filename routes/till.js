@@ -52,9 +52,9 @@ router.get("/till", (req, res, next) => {
 
   router.post("/extra", (req, res, next) => {
     let extra  = new Extra();
-    till.amount = req.body.amount;
-    till.totale = req.body.totale
-    till.save();
+    extra.amount = req.body.amount;
+    extra.totale = req.body.totale
+    extra.save();
     res.json({
       success: true,
       message: 'Success'
