@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const async = require('async');
 const Till = require('../models/tillModel');
-const Stanbic = require('../models/stanbicModel')
+const Stanbic = require('../models/stanbicModel');
+const Extra = require('../models/extraModel');
 
 
 
@@ -26,6 +27,29 @@ router.get("/till", (req, res, next) => {
      })
     });
   })
+
+
+  router.post("/extra", (req, res, next) => {
+    let extra  = new Extra();
+    till.amount = req.body.amount;
+    till.totale = req.body.totale
+    till.save();
+    res.json({
+      success: true,
+      message: 'Success'
+    });
+  });
+  
+  
+  router.get("/extra", (req, res, next) => {
+      Till.find({}, (err, extra) => {
+       res.json({
+         success: true,
+         message: "Success",
+         extra: extra
+       })
+      });
+    })
  
   router.post("/stanbic", (req, res, next) => {
     let stanbic  = new Stanbic();
