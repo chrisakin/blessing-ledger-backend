@@ -30,7 +30,7 @@ router.get("/till", (req, res, next) => {
 
 
   router.delete("/till",  (req, res, next) => {
-    Till.delete({})
+    Till.deleteMany({})
       .exec((err, till) => {
         if (err) {
           res.json({
