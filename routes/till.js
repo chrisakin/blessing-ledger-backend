@@ -29,6 +29,27 @@ router.get("/till", (req, res, next) => {
   })
 
 
+  router.delete("/till",  (req, res, next) => {
+    Till.delete({})
+      .exec((err, till) => {
+        if (err) {
+          res.json({
+            success: false,
+            message: 'Money not deleted'
+          });
+        } else {
+          if (till) {
+            res.json({
+              success: true,
+              till: till,
+              message: 'Money Successfully Deleted'
+            });
+          }
+        }
+      });
+  });
+
+
   router.post("/extra", (req, res, next) => {
     let extra  = new Extra();
     till.amount = req.body.amount;
@@ -40,6 +61,8 @@ router.get("/till", (req, res, next) => {
     });
   });
   
+
+
   
   router.get("/extra", (req, res, next) => {
       Till.find({}, (err, extra) => {
