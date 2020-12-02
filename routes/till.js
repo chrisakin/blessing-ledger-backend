@@ -53,7 +53,7 @@ router.get("/till", (req, res, next) => {
   router.post("/extra", (req, res, next) => {
     let extra  = new Extra();
     extra.amount = req.body.amount;
-    extra.totale = req.body.totale
+  
     extra.save();
     res.json({
       success: true,
@@ -65,7 +65,7 @@ router.get("/till", (req, res, next) => {
 
   
   router.get("/extra", (req, res, next) => {
-      Till.find({}, (err, extra) => {
+      Extra.find({}, (err, extra) => {
        res.json({
          success: true,
          message: "Success",

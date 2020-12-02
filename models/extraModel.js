@@ -12,12 +12,7 @@ const ExtraSchema = new Schema({
 
     required: true
   },
-  
-  totale : {
-    type: Number,
-   
-    required: true
-  },
+
   createdOn: {
     type: Date,
     default: Date.now

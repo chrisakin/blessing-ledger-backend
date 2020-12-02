@@ -3,7 +3,8 @@
 
 const mongoose = require('mongoose');
 require("./models/tillModel");
-require("./models/stanbicModel")
+require("./models/stanbicModel");
+require("./models/extraModel")
 
 
 
